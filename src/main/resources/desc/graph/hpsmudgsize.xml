@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE graphdesc PUBLIC "-//jrds//DTD Graph Description//EN" "urn:jrds:graphdesc">
+<graphdesc>
+  <name>HpSmuDiskGroupSize</name>
+  <graphName>hpsmudgsize-${attr.diskgroup}</graphName>
+  <graphTitle>Average requests size on disk group ${attr.diskgroup} on ${host}</graphTitle>
+  <unit>
+    <binary/>
+  </unit>
+  <verticalLabel>bytes</verticalLabel>
+  <add>
+    <name>number-of-reads</name>
+  </add>
+  <add>
+    <name>number-of-writes</name>
+  </add>
+  <add>
+    <name>data-write-numeric</name>
+  </add>
+  <add>
+    <name>data-read-numeric</name>
+  </add>
+  <add>
+    <rpn>data-write-numeric, number-of-writes, /</rpn>
+    <graphType>line</graphType>
+    <color>blue</color>
+    <legend>Average requests size on write</legend>
+  </add>
+  <add>
+    <rpn>data-read-numeric, number-of-reads, /</rpn>
+    <graphType>line</graphType>
+    <color>green</color>
+    <legend>Average requests size on read</legend>
+  </add>
+  <hosttree>
+    <pathelement>HOST</pathelement>
+    <pathstring>Disk groups activity</pathstring>
+    <pathstring>${attr.diskgroup}</pathstring>
+    <pathstring>Average requests size</pathstring>
+  </hosttree>
+  <viewtree>
+    <pathstring>HP Storage</pathstring>
+    <pathstring>Disk groups activity</pathstring>
+    <pathstring>Average requests size</pathstring>
+    <pathelement>HOST</pathelement>
+    <pathstring>${attr.diskgroup}</pathstring>
+  </viewtree>
+</graphdesc>

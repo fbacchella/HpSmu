@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE graphdesc PUBLIC "-//jrds//DTD Graph Description//EN" "urn:jrds:graphdesc">
+<graphdesc>
+  <name>HpSanCtrlBytes</name>
+  <graphName>ctrlbytes-${attr.controller}</graphName>
+  <graphTitle>I/O (bytes) on controller ${attr.controller} on ${host}</graphTitle>
+  <verticalLabel>bytes/s</verticalLabel>
+  <add>
+    <name>data-write-numeric</name>
+    <graphType>line</graphType>
+    <color>blue</color>
+    <legend>Number of bytes written</legend>
+  </add>
+  <add>
+    <name>data-read-numeric</name>
+    <reversed>true</reversed>
+    <graphType>line</graphType>
+    <color>green</color>
+     <legend>Number of bytes read</legend>
+  </add>
+  <hosttree>
+    <pathelement>HOST</pathelement>
+    <pathstring>Controllers activity</pathstring>
+    <pathstring>${attr.controller}</pathstring>
+    <pathstring>Activity as bytes/s</pathstring>
+  </hosttree>
+  <viewtree>
+    <pathstring>HP Storage</pathstring>
+    <pathstring>Controllers activity</pathstring>
+    <pathstring>Activity as bytes/s</pathstring>
+    <pathelement>HOST</pathelement>
+    <pathstring>${attr.controller}</pathstring>
+  </viewtree>
+</graphdesc>

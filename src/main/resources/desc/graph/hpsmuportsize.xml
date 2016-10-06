@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE graphdesc PUBLIC "-//jrds//DTD Graph Description//EN" "urn:jrds:graphdesc">
+<graphdesc>
+  <name>HpSmuPortSize</name>
+  <graphName>hpsmuportsize-${attr.port}</graphName>
+  <graphTitle>Average requests size on host port ${attr.port} on ${host}</graphTitle>
+  <unit>
+    <binary/>
+  </unit>
+  <verticalLabel>bytes</verticalLabel>
+  <add>
+    <name>number-of-reads</name>
+  </add>
+  <add>
+    <name>number-of-writes</name>
+  </add>
+  <add>
+    <name>data-written-numeric</name>
+  </add>
+  <add>
+    <name>data-read-numeric</name>
+  </add>
+  <add>
+    <rpn>data-written-numeric, number-of-writes, /</rpn>
+    <graphType>line</graphType>
+    <color>blue</color>
+    <legend>Average requests size on write</legend>
+  </add>
+  <add>
+    <rpn>data-read-numeric, number-of-reads, /</rpn>
+    <graphType>line</graphType>
+    <color>green</color>
+    <legend>Average requests size on read</legend>
+  </add>
+  <hosttree>
+    <pathelement>HOST</pathelement>
+    <pathstring>Host port activity</pathstring>
+    <pathstring>${attr.port}</pathstring>
+    <pathstring>Average requests size</pathstring>
+  </hosttree>
+  <viewtree>
+    <pathstring>HP Storage</pathstring>
+    <pathstring>Host port activity</pathstring>
+    <pathstring>Average requests size</pathstring>
+    <pathelement>HOST</pathelement>
+    <pathstring>${attr.port}</pathstring>
+  </viewtree>
+</graphdesc>

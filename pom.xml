@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fr.jrds</groupId>
+    <artifactId>hpsmu</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>hpsmu</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <buildSource>1.7</buildSource>
+        <buildTarget>1.7</buildTarget>
+        <!-- current year. -->
+        <year>2016</year>
+        <jrdsVersion>1.0-SNAPSHOT</jrdsVersion>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>fr.jrds</groupId>
+            <artifactId>jrds</artifactId>
+            <version>${jrdsVersion}</version>
+            <exclusions>
+                <!-- broken on central repository, but don't needed any way -->
+                <exclusion>
+                    <groupId>org.dojotoolkit</groupId>
+                    <artifactId>dojo</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>jrds</id>
+            <name>JRDS' jenkins</name>
+            <url>http://jrds.fr/jenkins/plugin/repository/everything</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${buildSource}</source>
+                    <target>${buildTarget}</target>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <configuration>
+                            <archive>
+                            </archive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.7</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}/desc</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>desc</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <organization>
+        <name>JRDS</name>
+        <url>http://jrds.fr/</url>
+    </organization>
+</project>
