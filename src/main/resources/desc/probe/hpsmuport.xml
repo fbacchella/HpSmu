@@ -35,6 +35,11 @@
     <ds>
         <dsName>avg-read-rsp-time</dsName>
         <dsType>counter</dsType>
+        <collect>/RESPONSE/OBJECT[@name="host-port-statistics"]/PROPERTY[@name="avg-rsp-time"]</collect>
+    </ds>
+    <ds>
+        <dsName>avg-read-rsp-time</dsName>
+        <dsType>counter</dsType>
         <collect>/RESPONSE/OBJECT[@name="host-port-statistics"]/PROPERTY[@name="avg-read-rsp-time"]</collect>
     </ds>
     <ds>
@@ -52,5 +57,6 @@
         <name>HpSmuPortOps</name>
         <name>HpSmuPortSize</name>
         <name>HpSmuPortQueue</name>
+        <name>HpSmuPortRspTime</name>
     </graphs>
 </probedesc>

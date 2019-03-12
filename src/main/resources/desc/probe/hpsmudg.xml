@@ -30,6 +30,21 @@
         <dsType>counter</dsType>
         <collect>/RESPONSE/OBJECT[@name="disk-group-statistics"]/PROPERTY[@name="data-write-numeric"]</collect>
     </ds>
+    <ds>
+        <dsName>avg-rsp-time</dsName>
+        <dsType>gauge</dsType>
+        <collect>/RESPONSE/OBJECT[@name="disk-group-statistics"]/PROPERTY[@name="avg-rsp-time"]</collect>
+    </ds>
+    <ds>
+        <dsName>avg-write-rsp-time</dsName>
+        <dsType>gauge</dsType>
+        <collect>/RESPONSE/OBJECT[@name="disk-group-statistics"]/PROPERTY[@name="avg-write-rsp-time"]</collect>
+    </ds>
+    <ds>
+        <dsName>avg-read-rsp-time</dsName>
+        <dsType>gauge</dsType>
+        <collect>/RESPONSE/OBJECT[@name="disk-group-statistics"]/PROPERTY[@name="avg-read-rsp-time"]</collect>
+    </ds>
     <graphs>
         <name>HpSmuDiskGroupBytes</name>
         <name>HpSmuDiskGroupOps</name>
