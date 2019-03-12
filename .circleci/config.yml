@@ -25,9 +25,8 @@ jobs:
                 command: |
                     mv -n /tmp/ws/home/circleci/.m2 /home/circleci/
                     mv -n /tmp/ws/home/circleci/project/* /home/circleci/project/
-                    mv -n /tmp/ws/home/circleci/project/.??* /home/circleci/project/
             - run:
-                command: mvn -B clean compile install -Djdk.compile.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
+                command: mvn -B clean package -Djdk.compile.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
                 environment:
                     JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
             - persist_to_workspace:
