@@ -6,7 +6,7 @@
   <graphTitle>I/O (bytes) on disk group ${attr.diskgroup} on ${host}</graphTitle>
   <verticalLabel>bytes/s</verticalLabel>
   <add>
-    <name>data-write-numeric</name>
+    <name>data-written-numeric</name>
     <graphType>line</graphType>
     <color>blue</color>
     <legend>Number of bytes written</legend>
@@ -26,9 +26,9 @@
   </hosttree>
   <viewtree>
     <pathstring>HP Storage</pathstring>
+    <pathelement>HOST</pathelement>
     <pathstring>Disk groups activity</pathstring>
     <pathstring>Activity as bytes/s</pathstring>
-    <pathelement>HOST</pathelement>
     <pathstring>${attr.diskgroup}</pathstring>
   </viewtree>
 </graphdesc>

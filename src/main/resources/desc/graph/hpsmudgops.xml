@@ -26,9 +26,9 @@
   </hosttree>
   <viewtree>
     <pathstring>HP Storage</pathstring>
+    <pathelement>HOST</pathelement>
     <pathstring>Disk groups activity</pathstring>
     <pathstring>Activity as operation/s</pathstring>
-    <pathelement>HOST</pathelement>
     <pathstring>${attr.diskgroup}</pathstring>
   </viewtree>
 </graphdesc>

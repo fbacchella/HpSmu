@@ -26,9 +26,9 @@
         <collect>/RESPONSE/OBJECT[@name="disk-group-statistics"]/PROPERTY[@name="data-read-numeric"]</collect>
     </ds>
     <ds>
-        <dsName>data-write-numeric</dsName>
+        <dsName>data-written-numeric</dsName>
         <dsType>counter</dsType>
-        <collect>/RESPONSE/OBJECT[@name="disk-group-statistics"]/PROPERTY[@name="data-write-numeric"]</collect>
+        <collect>/RESPONSE/OBJECT[@name="disk-group-statistics"]/PROPERTY[@name="data-written-numeric"]</collect>
     </ds>
     <ds>
         <dsName>avg-rsp-time</dsName>
@@ -49,5 +49,6 @@
         <name>HpSmuDiskGroupBytes</name>
         <name>HpSmuDiskGroupOps</name>
         <name>HpSmuDiskGroupSize</name>
+        <name>HpSmuDiskGroupRspTime</name>
     </graphs>
 </probedesc>

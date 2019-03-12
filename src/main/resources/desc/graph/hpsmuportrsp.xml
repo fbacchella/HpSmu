@@ -4,11 +4,8 @@
     <name>HpSmuPortRspTime</name>
     <graphName>hpsmuportrsp-${attr.port}</graphName>
     <graphTitle>Average response time on host port ${attr.port} on ${host}</graphTitle>
-    <unit>
-        <binary />
-    </unit>
     <verticalLabel>s</verticalLabel>
-    <add>
+        <add>
         <name>avg-read-rsp-time</name>
     </add>
     <add>
@@ -34,9 +31,9 @@
     </hosttree>
     <viewtree>
         <pathstring>HP Storage</pathstring>
+        <pathelement>HOST</pathelement>
         <pathstring>Host port activity</pathstring>
         <pathstring>Average response time</pathstring>
-        <pathelement>HOST</pathelement>
         <pathstring>${attr.port}</pathstring>
     </viewtree>
 </graphdesc>

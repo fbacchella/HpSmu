@@ -18,9 +18,9 @@
   </hosttree>
   <viewtree>
     <pathstring>HP Storage</pathstring>
+    <pathelement>HOST</pathelement>
     <pathstring>Controllers activity</pathstring>
     <pathstring>CPU usage</pathstring>
-    <pathelement>HOST</pathelement>
     <pathstring>${attr.controller}</pathstring>
   </viewtree>
 </graphdesc>

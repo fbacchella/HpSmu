@@ -26,9 +26,9 @@
   </hosttree>
   <viewtree>
     <pathstring>HP Storage</pathstring>
+    <pathelement>HOST</pathelement>
     <pathstring>Host port activity</pathstring>
     <pathstring>Activity as operation/s</pathstring>
-    <pathelement>HOST</pathelement>
     <pathstring>${attr.port}</pathstring>
   </viewtree>
 </graphdesc>

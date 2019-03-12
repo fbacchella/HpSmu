@@ -33,9 +33,9 @@
         <collect>/RESPONSE/OBJECT[@name="controller-statistics"]/PROPERTY[@name="data-read-numeric"]</collect>
     </ds>
     <ds>
-        <dsName>data-write-numeric</dsName>
+        <dsName>data-written-numeric</dsName>
         <dsType>counter</dsType>
-        <collect>/RESPONSE/OBJECT[@name="controller-statistics"]/PROPERTY[@name="data-write-numeric"]</collect>
+        <collect>/RESPONSE/OBJECT[@name="controller-statistics"]/PROPERTY[@name="data-written-numeric"]</collect>
     </ds>
     <ds>
         <dsName>write-cache-used</dsName>

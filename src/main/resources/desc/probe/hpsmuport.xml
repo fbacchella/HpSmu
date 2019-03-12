@@ -33,18 +33,18 @@
         <collect>/RESPONSE/OBJECT[@name="host-port-statistics"]/PROPERTY[@name="data-written-numeric"]</collect>
     </ds>
     <ds>
-        <dsName>avg-read-rsp-time</dsName>
-        <dsType>counter</dsType>
+        <dsName>avg-rsp-time</dsName>
+        <dsType>gauge</dsType>
         <collect>/RESPONSE/OBJECT[@name="host-port-statistics"]/PROPERTY[@name="avg-rsp-time"]</collect>
     </ds>
     <ds>
         <dsName>avg-read-rsp-time</dsName>
-        <dsType>counter</dsType>
+        <dsType>gauge</dsType>
         <collect>/RESPONSE/OBJECT[@name="host-port-statistics"]/PROPERTY[@name="avg-read-rsp-time"]</collect>
     </ds>
     <ds>
-        <dsName>avg-write-rsp-tim</dsName>
-        <dsType>counter</dsType>
+        <dsName>avg-write-rsp-time</dsName>
+        <dsType>gauge</dsType>
         <collect>/RESPONSE/OBJECT[@name="host-port-statistics"]/PROPERTY[@name="avg-write-rsp-time"]</collect>
     </ds>
     <ds>
