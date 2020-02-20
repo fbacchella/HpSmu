@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jdk.compile.home>${java.home}</jdk.compile.home>
+        <jdk.compile.home>${jdk.8.home}</jdk.compile.home>
         <bootclasspath>${jdk.compile.home}/jre/lib/rt.jar</bootclasspath>
         <!-- current year. -->
         <year>2020</year>
@@ -75,21 +75,6 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
-                    <configuration>
-                        <compilerArgs>
-                            <arg>-Xlint</arg>
-                            <arg>-Xbootclasspath/p:${bootclasspath}</arg>
-                        </compilerArgs>
-                        <showWarnings>false</showWarnings>
-                        <!-- needed for maven-plugin-javadoc to find the source version to use -->
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.1.1</version>
                 </plugin>
@@ -143,6 +128,21 @@
             </plugins>
         </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-Xlint</arg>
+                        <arg>-Xbootclasspath/p:${bootclasspath}</arg>
+                    </compilerArgs>
+                    <showWarnings>false</showWarnings>
+                    <!-- needed for maven-plugin-javadoc to find the source version to use -->
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>

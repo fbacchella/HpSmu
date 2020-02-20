@@ -26,7 +26,7 @@ public class HpSmuProbe extends HttpXml {
                 return false;
             }
         } catch (DOMException | XPathExpressionException e) {
-            log(Level.ERROR, e, "invalid XML operation: %s", e.getMessage());
+            log(Level.ERROR, e, "invalid XML operation: %s", e);
             return false;
         }
         return true;

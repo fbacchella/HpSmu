@@ -57,7 +57,7 @@ public class HpSmuSession extends HttpSession {
             newUri = new URI("https", uri.getUserInfo(), uri.getHost(), 443, uri.getPath(), uri.getQuery(), uri.getFragment());
             request.setURI(newUri);
         } catch (URISyntaxException e) {
-            log(Level.ERROR, e, "can't rewrite URL %s: %s", uri, e.getMessage());
+            log(Level.ERROR, e, "can't rewrite URL %s: %s", uri, e);
             return false;
         }
         if (token == null) {
@@ -98,17 +98,17 @@ public class HpSmuSession extends HttpSession {
                     }
                     token = xmlstarter.getNode(d, "/RESPONSE/OBJECT/PROPERTY[@name='response']").getTextContent();
                 } catch (DOMException | XPathExpressionException e) {
-                    log(Level.ERROR, e, "invalid XML operation: %s", e.getMessage());
+                    log(Level.ERROR, e, "invalid XML operation: %s", e);
                 }
 
             } catch (MalformedURLException|URISyntaxException e) {
-                log(Level.ERROR, e, "can't get login URL: %s", e.getMessage());
+                log(Level.ERROR, e, "can't get login URL: %s", e);
                 return false;
             } catch (ClientProtocolException e) {
-                log(Level.ERROR, e, "HTTP error during authentication: %s", e.getMessage());
+                log(Level.ERROR, e, "HTTP error during authentication: %s", e);
                 return false;
             } catch (IOException e) {
-                log(Level.ERROR, e, "IO error during authentication: %s", e.getMessage());
+                log(Level.ERROR, e, "IO error during authentication: %s", e);
                 return false;
             }
         }
