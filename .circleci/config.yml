@@ -6,7 +6,7 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                key: jrds-{{ checksum "pom.xml" }}
+                key: hpsmu-{{ checksum "pom.xml" }}
             - run:
                 command: |
                     sudo apt-get update
@@ -147,7 +147,7 @@ jobs:
                 paths:
                     - /home/circleci/.m2/repository
                     - /home/circleci/.sonar/cache
-                key: jrds-{{ checksum "pom.xml" }}
+                key: hpsmu-{{ checksum "pom.xml" }}
             
 workflows:
   version: 2.1
