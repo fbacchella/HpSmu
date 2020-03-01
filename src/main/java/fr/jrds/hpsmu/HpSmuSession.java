@@ -7,7 +7,6 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.MessageDigest;
 
-import javax.xml.bind.DatatypeConverter;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.apache.http.HttpEntity;
@@ -27,6 +26,16 @@ import jrds.probe.HttpSession;
 import jrds.starter.XmlProvider;
 
 public class HpSmuSession extends HttpSession {
+
+    private static final char[] hexCode = "0123456789ABCDEF".toCharArray();
+    public String printHexBinary(byte[] data) {
+        StringBuilder r = new StringBuilder(data.length * 2);
+        for (byte b : data) {
+            r.append(hexCode[(b >> 4) & 0xF]);
+            r.append(hexCode[(b & 0xF)]);
+        }
+        return r.toString();
+    }
 
     private String login;
     private String password;
@@ -67,7 +76,7 @@ public class HpSmuSession extends HttpSession {
                 md5.reset();
                 byte[] digest = md5.digest(String.format("%s_%s", login, password).getBytes());
                 md5.reset();
-                URL url = new URL(newUri.getScheme(), newUri.getHost(), newUri.getPort(), "/api/login/" + DatatypeConverter.printHexBinary(digest).toLowerCase());
+                URL url = new URL(newUri.getScheme(), newUri.getHost(), newUri.getPort(), "/api/login/" + printHexBinary(digest).toLowerCase());
                 HttpClientStarter httpstarter = getLevel().find(HttpClientStarter.class);
                 HttpClient cnx = httpstarter.getHttpClient();
                 HttpGet hg = new HttpGet(url.toURI());
@@ -118,7 +127,6 @@ public class HpSmuSession extends HttpSession {
         return true;
 
     }
-
     /**
      * @return the password
      */
